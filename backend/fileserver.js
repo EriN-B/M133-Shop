@@ -6,7 +6,7 @@ export const frontendFiles = context => send(
     context,
     context.request.url.pathname,
     {
-        root:  `${Deno.cwd()}/frontend/dist/index.html`,
+        root:  `${Deno.cwd()}/frontend/dist/frontend/`,
         index: "index.html"
     }
 );

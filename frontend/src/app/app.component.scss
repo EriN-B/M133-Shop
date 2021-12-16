@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+
+.card{
+  position : relative;
+}
+
+.card .card__container{
+  position: relative;
+}
+
+.card .card__header{
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.card .card__body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.card::after{
+  position: absolute;
+  content: attr(data-label);
+  top: 11px;
+  right: -14px;
+  padding: 0.5rem;
+  width: 5rem;
+  border-radius: 4px;
+  background: orange;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+}
+
 .img{
     height: 250px;
     margin-top: 30px;
@@ -36,7 +71,14 @@ body{
     margin-top: 30px;
 }
 
-.sale{
-    margin-left: 2%;
-    margin-right: 2%;
+.card{
+    position: relative;
+}
+
+.button{
+    position: relative;
+}
+
+.badge{
+    position: relative;
 }

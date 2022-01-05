@@ -2,11 +2,17 @@
 import {Router} from 'https://deno.land/x/oak@v6.3.1/mod.ts';
 import {v4} from 'https://deno.land/std@0.77.0/uuid/mod.ts';
 
-let list = [
-    {id: v4.generate(), beschreibung: "One"},
-    {id: v4.generate(), beschreibung: "two"},
-    {id: v4.generate(), beschreibung: "three"},
-];
+
+async function getJson() {
+    return JSON.parse(await Deno.readTextFile("./backend/data/products.json"));
+}
+
+async function loadProducts(){
+    let products = getJson();
+}
+
+loadProducts();
+
 
 const router = new Router();
 

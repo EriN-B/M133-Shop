@@ -1,0 +1,38 @@
+CREATE TABLE categories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    categrie_name TEXT
+);
+
+CREATE TABLE products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_title TEXT,
+    price REAL,
+    image TEXT,
+    categorie_id INTEGER,
+    FOREIGN KEY(categorie_id) REFERENCES categories(id)
+);
+
+
+INSERT INTO categories VALUES(null, "Milchprodukte")
+INSERT INTO categories VALUES(null, "Fruechte")
+INSERT INTO categories VALUES(null, "Getraenke")
+INSERT INTO categories VALUES(null, "Fleisch & Fisch")
+
+
+
+INSERT INTO products VALUES(null, "Appenzeller Chääs", 5.00, "asdkoasdasdoasdmoasmd", 1)
+INSERT INTO products VALUES(null, "Milch", 2.50, "asdkoasdasdoasdmoasmd", 1)
+INSERT INTO products VALUES(null, "Jogurt", 1.50, "asdkoasdasdoasdmoasmd", 1)
+
+INSERT INTO products VALUES(null, "Apfel", 5.00, "asdkoasdasdoasdmoasmd", 2)
+INSERT INTO products VALUES(null, "Birne", 5.50, "asdkoasdasdoasdmoasmd", 2)
+INSERT INTO products VALUES(null, "Banane", 5.50, "asdkoasdasdoasdmoasmd", 2)
+
+INSERT INTO products VALUES(null, "Ice Tea", 1.50, "asdkoasdasdoasdmoasmd", 3)
+INSERT INTO products VALUES(null, "Coca Cola", 2.30, "asdkoasdasdoasdmoasmd", 3)
+INSERT INTO products VALUES(null, "Fanta", 2.30, "asdkoasdasdoasdmoasmd", 3)
+
+INSERT INTO products VALUES(null, "Lachs", 8.00, "asdkoasdasdoasdmoasmd", 4)
+INSERT INTO products VALUES(null, "Steak", 15.00, "asdkoasdasdoasdmoasmd", 4)
+INSERT INTO products VALUES(null, "Wurst", 5.00, "asdkoasdasdoasdmoasmd", 4)
+

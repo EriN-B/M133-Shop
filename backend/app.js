@@ -7,8 +7,14 @@ const router = new Router();
 
 let inventory = new Inventory();
 
+let cart = [];
+
 router
     .get("/api/products", context => context.response.body = inventory.products)
     .get("/api/products/:title", context => context.response.body = inventory.products.find(item => item.title))
+    .post("/api/cart/", async context => {
+        const product = await context.request.body({ type: "json" }).value;
+        console.log(product);
+    });
 
 export const apiRoutes = router.routes();

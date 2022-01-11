@@ -7,7 +7,7 @@ const app = new Application();
 
 app.use(apiRoutes);
 
-console.log("running")
+app.listen({port: 8000});
 
 
 

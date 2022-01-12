@@ -25,6 +25,14 @@ router
         }
         const shopingCart = await context.state.session.get("cart");
         sessionItem.add(await context.request.body({ type: "json" }).value)
+    })
+    .delete("/api/cart", async context => {
+        logger.info("Removing Product from cart");
+        if (await context.state.session.has("cart")) {
+            const shopingCart = await context.state.session.get("cart").remove(
+                await context.request.body({ type: "json" }).value
+                );
+        }
     });
 
 export const apiRoutes = router.routes();

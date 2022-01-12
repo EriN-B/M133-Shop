@@ -1,8 +1,8 @@
 'use strict'
-import { Router } from 'https://deno.land/x/oak@v6.3.1/mod.ts';
+import { Router} from "https://deno.land/x/oak@v6.3.1/mod.ts";
 import { Inventory } from './data/inventory.js';
-import { Session } from "https://deno.land/x/sessions/mod.ts";
 import {log} from './log.js'
+import {cart} from './cart.js'
 
 const router = new Router();
 
@@ -15,14 +15,16 @@ router
         logger.info("Fetching all products");
         context.response.body = inventory.products})
     .get("/api/products/:title", context => {
-        console.log(params.title)
         logger.info("Fetching products by title");
         context.response.body = inventory.products.find(item => item.title)})
-    .post("/api/cart", session.initMiddleware(), async context => {
-        await sessionStorage.setItem("")
+    .post("/api/cart", async context => {
         logger.info("Adding Product to cart");
-        const product = await context.request.body({ type: "json" }).value;
-        console.log(product);
+        if (!await context.state.session.has("cart")) {
+            const shoppingCart = new cart();
+            await context.state.session.set("cart", shoppingCart)
+        }
+        const shopingCart = await context.state.session.get("cart");
+        sessionItem.add(await context.request.body({ type: "json" }).value)
     });
 
 export const apiRoutes = router.routes();

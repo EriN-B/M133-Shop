@@ -20,6 +20,8 @@ import { ProductsComponent } from './products/products.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
 
+import { DragScrollModule } from 'ngx-drag-scroll';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { ModalComponent } from './modal/modal.component';
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule, 
-    MatDialogModule
+    MatDialogModule,
+    DragScrollModule
     ],
   providers: [],
   bootstrap: [AppComponent]

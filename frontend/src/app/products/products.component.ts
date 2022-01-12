@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
   async ngOnInit() {
     this.http.get<any>('http://localhost:8000/api/products/').subscribe(data => {
         this.products = data;
+        console.log(data);
     })
   }
 

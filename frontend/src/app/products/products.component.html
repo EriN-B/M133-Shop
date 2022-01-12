@@ -13,7 +13,7 @@
                 <p class="subtitle is-6 has-text-info">{{product.subtitle}}</p>
                 <div class="content">
                   <h1 class="title">CHF {{product.price.toFixed(2)}}</h1>
-                  <button class="button is-info to-cart" (click)="showSuccess(product.title)">
+                  <button class="button is-info to-cart" (click)="openDialog()">
                     <span class="icon">
                       <fa-icon [icon]="faCartPlus"></fa-icon>
                     </span>

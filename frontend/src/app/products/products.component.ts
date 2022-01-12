@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { faShoppingCart, faWarehouse, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+
 
 @Component({
   selector: 'app-products',
@@ -14,7 +15,7 @@ export class ProductsComponent implements OnInit {
   
   products: any = [];
 
-  constructor(private toastr: ToastrService, private http: HttpClient) {
+  constructor(private toastr: ToastrService, private http: HttpClient, private matDialog: MatDialog) {
   }
 
   async ngOnInit() {
@@ -30,5 +31,9 @@ export class ProductsComponent implements OnInit {
 
   showSuccess(title : string) {
     this.toastr.success(title + ' \n wurde zu deinem Account hinzugefügt');
+  }
+
+  openDialog() {
+    this.matDialog.open(ModalComponent);
   }
 }

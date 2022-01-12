@@ -11,15 +11,23 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
+
+//Components
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
+
+//Angular Materiaö
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from './modal/modal.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
-    ProductsComponent
+    ProductsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +36,9 @@ import { ProductsComponent } from './products/products.component';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule
-  ],
+    RouterModule, 
+    MatDialogModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

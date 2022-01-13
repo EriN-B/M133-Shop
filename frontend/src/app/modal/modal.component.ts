@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService : ProductService) { }
+
+  product: any;
 
   ngOnInit(): void {
+    this.product = this.productService.getProduct();
   }
 
 }

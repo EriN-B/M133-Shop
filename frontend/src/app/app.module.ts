@@ -21,6 +21,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
 
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { CheckOutComponent } from './check-out/check-out.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -29,7 +32,8 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     AppComponent,
     CartComponent,
     ProductsComponent,
-    ModalComponent
+    ModalComponent,
+    CheckOutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,10 +42,12 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule, 
+    RouterModule,
     MatDialogModule,
-    DragScrollModule
-    ],
+    DragScrollModule,
+    ReactiveFormsModule,
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

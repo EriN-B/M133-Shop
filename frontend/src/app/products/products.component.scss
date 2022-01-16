@@ -2,6 +2,7 @@
 
 .card{
   position : relative;
+  cursor: pointer;
 }
 
 .card .card__container{
@@ -47,10 +48,8 @@ body{
     margin-top: 30px;
 }
 
-.card{
-    position: relative;
-}
 
-.button{
-    position: relative;
+.discount{
+    text-decoration: line-through;
+    text-decoration-color: hsl(204, 86%, 53%);
 }

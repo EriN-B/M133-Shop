@@ -23,15 +23,11 @@ export class ProductsComponent implements OnInit {
     this.http.get<any>('http://localhost:8000/api/products/').subscribe(data => {
         this.products = data;
         console.log(data);
-    })
+    });
   }
 
   //Font-Awesome icons
   faCartPlus = faCartPlus;
-
-  showSuccess(title : string) {
-    this.toastr.success(title + ' \n wurde zu deinem Account hinzugefügt');
-  }
 
   openDialog(product:any) {
     this.productService.setProduct(product)

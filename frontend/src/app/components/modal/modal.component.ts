@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {ToastrService} from "ngx-toastr";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-modal',
@@ -9,7 +10,7 @@ import {ToastrService} from "ngx-toastr";
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private productService : ProductService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private productService : ProductService) { }
 
   product: any;
   priceWithDiscount: number = 0;
@@ -28,6 +29,10 @@ export class ModalComponent implements OnInit {
   }
 
   addToCart(): void {
+    this.http.post<any>('http://localhost:8000/api/cart/add', {
+      amount: 1,
+      id: this.product.id
+    });
     this.showSuccess(this.product.title);
   }
 }

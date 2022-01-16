@@ -14,13 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Components
 import { CartComponent } from './cart/cart.component';
+import { ProductsComponent } from './products/products.component';
 
 //Angular Materiaö
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModalComponent } from './components/modal/modal.component';
-import {ProductsComponent} from "./components/products/products.component";
+import { ModalComponent } from './modal/modal.component';
 
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { CheckOutComponent } from './check-out/check-out.component';
+import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 
 
@@ -30,7 +32,8 @@ import {MatButtonModule} from "@angular/material/button";
     AppComponent,
     CartComponent,
     ProductsComponent,
-    ModalComponent
+    ModalComponent,
+    CheckOutComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import {MatButtonModule} from "@angular/material/button";
     RouterModule,
     MatDialogModule,
     DragScrollModule,
+    ReactiveFormsModule,
     MatButtonModule
   ],
   providers: [],

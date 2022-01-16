@@ -3,8 +3,8 @@ import { faShoppingCart, faWarehouse, faCartPlus } from '@fortawesome/free-solid
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
-import { ProductService } from '../services/product.service';
+import {ModalComponent} from "../modal/modal.component";
+import {ProductService} from "../../services/product.service";
 
 
 @Component({
@@ -23,17 +23,11 @@ export class ProductsComponent implements OnInit {
     this.http.get<any>('http://localhost:8000/api/products/').subscribe(data => {
         this.products = data;
         console.log(data);
-    })
+    });
   }
 
   //Font-Awesome icons
-  faShoppingCart = faShoppingCart;
-  faWarehouse = faWarehouse;
   faCartPlus = faCartPlus;
-
-  showSuccess(title : string) {
-    this.toastr.success(title + ' \n wurde zu deinem Account hinzugefügt');
-  }
 
   openDialog(product:any) {
     this.productService.setProduct(product)

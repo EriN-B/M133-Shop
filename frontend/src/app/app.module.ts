@@ -14,11 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Components
 import { CartComponent } from './cart/cart.component';
-import { ProductsComponent } from './products/products.component';
 
 //Angular Materiaö
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './components/modal/modal.component';
+import {ProductsComponent} from "./components/products/products.component";
 
 import { DragScrollModule } from 'ngx-drag-scroll';
 
@@ -38,7 +38,7 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule, 
+    RouterModule,
     MatDialogModule,
     DragScrollModule
     ],

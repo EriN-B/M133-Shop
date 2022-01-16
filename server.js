@@ -8,7 +8,7 @@ import { Logger } from './backend/logger.js'
 const app = new Application();
 let logger = new Logger();
 
-app.use(oakCors({ origin: "*" }));;
+app.use(oakCors({ origin: "*" }));
 
 app.use(apiRoutes);
 app.use(frontendFiles);

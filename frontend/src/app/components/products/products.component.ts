@@ -3,8 +3,8 @@ import { faShoppingCart, faWarehouse, faCartPlus } from '@fortawesome/free-solid
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
-import { ProductService } from '../services/product.service';
+import {ModalComponent} from "../modal/modal.component";
+import {ProductService} from "../../services/product.service";
 
 
 @Component({
@@ -27,8 +27,6 @@ export class ProductsComponent implements OnInit {
   }
 
   //Font-Awesome icons
-  faShoppingCart = faShoppingCart;
-  faWarehouse = faWarehouse;
   faCartPlus = faCartPlus;
 
   showSuccess(title : string) {

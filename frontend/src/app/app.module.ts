@@ -21,6 +21,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import {ProductsComponent} from "./components/products/products.component";
 
 import { DragScrollModule } from 'ngx-drag-scroll';
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -40,8 +41,9 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     HttpClientModule,
     RouterModule,
     MatDialogModule,
-    DragScrollModule
-    ],
+    DragScrollModule,
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

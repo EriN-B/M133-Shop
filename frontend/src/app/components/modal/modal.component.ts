@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-modal',
@@ -8,7 +9,7 @@ import {ProductService} from "../../services/product.service";
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private productService : ProductService) { }
+  constructor(private toastr: ToastrService, private productService : ProductService) { }
 
   product: any;
   priceWithDiscount: number = 0;
@@ -18,8 +19,15 @@ export class ModalComponent implements OnInit {
     this.getPriceWithDiscount();
   }
 
+  showSuccess(title : string) {
+    this.toastr.success(title + ' \n wurde zu deinem Account hinzugefügt');
+  }
 
   getPriceWithDiscount(): void {
     this.priceWithDiscount = (this.product.price / 100) * (100 - this.product.discount);
+  }
+
+  addToCart(): void {
+    this.showSuccess(this.product.title);
   }
 }
